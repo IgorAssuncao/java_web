@@ -12,7 +12,7 @@
   </head>
   <body>
     <div>
-      <form action="/Form_war_exploded/FormViewServlet" method="GET">
+      <form action="/Form_war_exploded/CadastroUser" method="POST">
         <table>
           <tr>
             <td>Name: </td>
@@ -23,19 +23,8 @@
             <td><input type="text" name="email"></td>
           </tr>
           <tr>
-            <td>Address: </td>
-            <td><input type="text" name="address"></td>
-          </tr>
-          <tr>
-            <td>UF:</td>
-            <td>
-              <select name="uf">
-                <option value="rj">RJ</option>
-                <option value="sp">SP</option>
-                <option value="mg">MG</option>
-                <option value="es">ES</option>
-              </select>
-            </td>
+            <td>Password: </td>
+            <td><input type="password" name="address"></td>
           </tr>
           <tr>
             <td><input type="submit" name="submit" value="Submit"></td>
