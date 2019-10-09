@@ -25,6 +25,12 @@ public class ApplicationController {
 
     @GetMapping("/")
     public ModelAndView index(Model model) {
+        for (long i = 1; i <= 3; i++) {
+            if (!(mesaService.existsById(i))) mesaService.save(new Mesa((i)));
+        }
+        if (!(itemService.existsById(1L))) itemService.save(new Item(1L, "Cerveja", 10L));
+        if (!(itemService.existsById(2L))) itemService.save(new Item(2L, "Porcao batata frita", 20L));
+        if (!(itemService.existsById(3L))) itemService.save(new Item(3L, "Porcao frango a passarinho", 25L));
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("mesa", new Mesa());
         HashMap<String, Object> attributes = new HashMap<>();

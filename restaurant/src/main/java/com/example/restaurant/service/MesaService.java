@@ -31,6 +31,10 @@ public class MesaService {
         return mesaRepository.getOne(id);
     }
 
+    public boolean existsById(Long id) {
+        return mesaRepository.existsById(id);
+    }
+
     public void addPedido(Mesa mesa, Pedido pedido) {
         Long idMesa = mesa.getIdMesa();
         Long idPedido = pedido.getIdPedido();

@@ -22,6 +22,11 @@ public class Mesa implements Serializable {
         this.pedidos = new ArrayList<>();
     }
 
+    public Mesa(Long idMesa) {
+        this.idMesa = idMesa;
+        this.pedidos = new ArrayList<>();
+    }
+
     public Mesa(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }

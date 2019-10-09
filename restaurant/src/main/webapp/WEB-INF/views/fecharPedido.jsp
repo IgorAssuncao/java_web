@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
     <head>
-        <title>Novo Pedido</title>
+        <title>Pedido fechado</title>
     </head>
     <body>
         <div align="center">

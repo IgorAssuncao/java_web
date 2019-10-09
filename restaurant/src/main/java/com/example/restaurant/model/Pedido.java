@@ -15,7 +15,7 @@ public class Pedido {
     private Long idPedido;
     private Long precoTotal;
     @Cascade(value = org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @OneToMany
+    @ManyToMany
     private List<Item> itens;
     @Cascade(value = org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @ManyToOne

@@ -19,7 +19,6 @@
                     <c:forEach items="${itens}" var="item">
                         <tr>
                             <td><form:checkbox path="itens" value="${item.idItem}"/></td>
-<%--                            <td><input type="checkbox" name="itemId" value="${item.idItem}" /></td>--%>
                             <td>${item.idItem}</td>
                             <td>${item.nome}</td>
                             <td>${item.preco}</td>

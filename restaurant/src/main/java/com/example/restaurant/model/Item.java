@@ -3,6 +3,7 @@ package com.example.restaurant.model;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "itens")
@@ -10,18 +11,24 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
+//    @Column(nullable = false)
     private Long idItem;
     @Cascade(value = org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @ManyToOne
-    private Pedido pedido;
+    @ManyToMany
+    private List<Pedido> pedidos;
     private String nome;
     private Long preco;
 
     public Item() {
     }
 
-    public Item(Pedido pedido, String nome, Long preco) {
-        this.pedido = pedido;
+    public Item(Long idItem, String nome, Long preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Item(List<Pedido> pedidos, String nome, Long preco) {
+        this.pedidos = pedidos;
         this.nome = nome;
         this.preco = preco;
     }
@@ -34,12 +41,12 @@ public class Item {
         this.idItem = idItem;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public List<Pedido> getPedidos() {
+        return pedidos;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setPedido(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 
     public String getNome() {
